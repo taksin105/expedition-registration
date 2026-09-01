@@ -93,20 +93,20 @@
                         <!-- Full Name -->
                         <div class="form-group full-width">
                             <label for="fullName">
-                                ชื่อ-นามสกุล (Full Name) <span class="required-star">*</span>
+                                <span>ชื่อ-นามสกุล (Full Name) <span class="required-star">*</span></span>
                             </label>
                             <div class="input-container">
                                 <i data-lucide="user" class="input-icon"></i>
                                 <input type="text" id="fullName" name="fullName" placeholder="เช่น ดร. ปีเตอร์ ฟอร์ด หรือ นายทักษิณ นิสภวาณิชย์" required>
                             </div>
-                            <span class="hint-text">ความยาว 2 - 50 ตัวอักษร (รองรับทั้งภาษาไทยและอังกฤษ ห้ามมีตัวเลขหรืออักขระพิเศษ ยกเว้น - และ ')</span>
+                            <span class="hint-text">ความยาว 2 - 50 ตัวอักษร (รองรับทั้งภาษาไทยและอังกฤษ ห้ามมีตัวเลขหรืออักขระพิเศษ)</span>
                             <span class="error-message" id="fullNameError"></span>
                         </div>
 
                         <!-- Email -->
                         <div class="form-group">
                             <label for="email">
-                                อีเมล (Email Address) <span class="required-star">*</span>
+                                <span>อีเมล (Email Address) <span class="required-star">*</span></span>
                             </label>
                             <div class="input-container">
                                 <i data-lucide="mail" class="input-icon"></i>
@@ -119,20 +119,20 @@
                         <!-- Contact Number (มี BUG #1: ยอมให้พิมพ์ตัวอักษรได้) -->
                         <div class="form-group">
                             <label for="contactNumber">
-                                เบอร์โทรศัพท์ติดต่อ (Contact Number) <span class="required-star">*</span>
+                                <span>เบอร์โทรศัพท์ติดต่อ (Contact Number) <span class="required-star">*</span></span>
                             </label>
                             <div class="input-container">
                                 <i data-lucide="phone" class="input-icon"></i>
                                 <input type="text" id="contactNumber" name="contactNumber" placeholder="เช่น 0812345678 หรือ +66812345678" required>
                             </div>
-                            <span class="hint-text">ความยาว 7 - 15 ตัวอักษร</span>
+                            <span class="hint-text">ความยาว 7 – 15 ตัวอักษร</span>
                             <span class="error-message" id="contactNumberError"></span>
                         </div>
 
                         <!-- Date of Birth -->
                         <div class="form-group">
                             <label for="dob">
-                                วัน/เดือน/ปีเกิด (Date of Birth) <span class="required-star">*</span>
+                                <span>วัน/เดือน/ปีเกิด (Date of Birth) <span class="required-star">*</span></span>
                             </label>
                             <div class="input-container">
                                 <i data-lucide="calendar" class="input-icon"></i>
@@ -145,13 +145,14 @@
                         <!-- Emergency Contact -->
                         <div class="form-group">
                             <label for="emergencyContact">
-                                ผู้ติดต่อกรณีฉุกเฉินและเบอร์โทร (Emergency Contact) <span class="badge-extra">ฟังก์ชันพิเศษ</span>
+                                <span>ผู้ติดต่อฉุกเฉิน (Emergency Contact)</span>
+                                <span class="badge-extra">ฟังก์ชันพิเศษ</span>
                             </label>
                             <div class="input-container">
                                 <i data-lucide="phone-call" class="input-icon"></i>
                                 <input type="text" id="emergencyContact" name="emergencyContact" placeholder="เช่น คุณสมศรี (มารดา) 089-999-8888">
                             </div>
-                            <span class="hint-text">ระบุชื่อความสัมพันธ์และเบอร์โทรศัพท์สำหรับติดต่อในกรณีฉุกเฉิน</span>
+                            <span class="hint-text">ระบุชื่อความสัมพันธ์และเบอร์โทรศัพท์ติดต่อ</span>
                             <span class="error-message" id="emergencyContactError"></span>
                         </div>
                     </div>
@@ -171,7 +172,7 @@
                         <!-- Archaeology Experience -->
                         <div class="form-group">
                             <label for="experience">
-                                ประสบการณ์งานโบราณคดี (Archaeology Experience) <span class="required-star">*</span>
+                                <span>ประสบการณ์งานโบราณคดี (Archaeology Experience) <span class="required-star">*</span></span>
                             </label>
                             <div class="input-container select-container">
                                 <i data-lucide="briefcase" class="input-icon"></i>
@@ -189,7 +190,7 @@
                         <!-- Preferred Contact Method -->
                         <div class="form-group">
                             <label for="contactMethod">
-                                ช่องทางการติดต่อที่สะดวก (Preferred Contact Method)
+                                <span>ช่องทางการติดต่อที่สะดวก (Preferred Contact Method)</span>
                             </label>
                             <div class="input-container select-container">
                                 <i data-lucide="message-square" class="input-icon"></i>
@@ -204,10 +205,10 @@
                             <span class="hint-text">ช่องทางหลักที่ทีมงานจะประสานงานส่งกำหนดการ</span>
                         </div>
 
-                        <!-- Preferred Role in Expedition (Checkboxes) -->
-                        <div class="form-group full-width">
-                            <label>
-                                บทบาทที่ต้องการในทีมสำรวจ (Preferred Role in the Expedition) <span class="required-star">*</span>
+                        <!-- Preferred Role in Expedition (Checkboxes - 6 cards, 3x2 grid) -->
+                        <div class="form-group full-width field-aligned-block">
+                            <label class="group-title-label">
+                                <span>บทบาทที่ต้องการในทีมสำรวจ (Preferred Role in the Expedition) <span class="required-star">*</span></span>
                                 <span class="label-sub">(เลือกได้มากกว่า 1 ตำแหน่ง)</span>
                             </label>
                             <div class="checkbox-grid">
@@ -216,7 +217,7 @@
                                     <div class="card-content">
                                         <i data-lucide="book-open"></i>
                                         <span class="card-title">นักวิจัยโบราณคดี (Researcher)</span>
-                                        <span class="card-desc">สืบค้นเอกสารและแปลจารึก</span>
+                                        <span class="card-desc">สืบค้นเอกสารและแปลจารึกโบราณ</span>
                                     </div>
                                 </label>
 
@@ -224,7 +225,7 @@
                                     <input type="checkbox" name="role" value="Photographer" id="rolePhotographer">
                                     <div class="card-content">
                                         <i data-lucide="camera"></i>
-                                        <span class="card-title">ช่างภาพบันทึกประวัติศาสตร์ (Photographer)</span>
+                                        <span class="card-title">ช่างภาพประวัติศาสตร์ (Photographer)</span>
                                         <span class="card-desc">ถ่ายภาพวัตถุโบราณและสถานที่</span>
                                     </div>
                                 </label>
@@ -233,8 +234,8 @@
                                     <input type="checkbox" name="role" value="Drone Operator" id="roleDrone">
                                     <div class="card-content">
                                         <i data-lucide="navigation"></i>
-                                        <span class="card-title">ผู้ควบคุมโดรนสำรวจ (Drone Operator)</span>
-                                        <span class="card-desc">สร้างแผนที่สามมิติทางอากาศ</span>
+                                        <span class="card-title">ผู้ควบคุมโดรน (Drone Operator)</span>
+                                        <span class="card-desc">สร้างแผนที่และสำรวจภาพถ่ายทางอากาศ</span>
                                     </div>
                                 </label>
 
@@ -242,7 +243,7 @@
                                     <input type="checkbox" name="role" value="Cartographer" id="roleCartographer">
                                     <div class="card-content">
                                         <i data-lucide="map"></i>
-                                        <span class="card-title">นักทำแผนที่ภูมิศาสตร์ (Cartographer)</span>
+                                        <span class="card-title">นักทำแผนที่ (Cartographer)</span>
                                         <span class="card-desc">เขียนแผนที่เส้นทางและผังโบราณสถาน</span>
                                     </div>
                                 </label>
@@ -251,7 +252,7 @@
                                     <input type="checkbox" name="role" value="Medic" id="roleMedic">
                                     <div class="card-content">
                                         <i data-lucide="heart-pulse"></i>
-                                        <span class="card-title">แพทย์สนามและปฐมพยาบาล (Medic)</span>
+                                        <span class="card-title">แพทย์สนาม (Field Medic)</span>
                                         <span class="card-desc">ดูแลสุขภาพและความปลอดภัยของทีม</span>
                                     </div>
                                 </label>
@@ -260,7 +261,7 @@
                                     <input type="checkbox" name="role" value="Logistician" id="roleLogistician">
                                     <div class="card-content">
                                         <i data-lucide="truck"></i>
-                                        <span class="card-title">ผู้จัดการฝ่ายส่งกำลังบำรุง (Logistician)</span>
+                                        <span class="card-title">ฝ่ายส่งกำลังบำรุง (Logistician)</span>
                                         <span class="card-desc">บริหารเสบียง เต็นท์ และอุปกรณ์ขุดค้น</span>
                                     </div>
                                 </label>
@@ -268,10 +269,10 @@
                             <span class="error-message" id="roleError"></span>
                         </div>
 
-                        <!-- Preferred Expedition Region (Radio buttons) -->
-                        <div class="form-group full-width">
-                            <label>
-                                ภูมิภาคที่ประสงค์จะเข้าร่วมสำรวจ (Preferred Expedition Region) <span class="required-star">*</span>
+                        <!-- Preferred Expedition Region (Radio buttons - 6 cards, 3x2 grid) -->
+                        <div class="form-group full-width field-aligned-block">
+                            <label class="group-title-label">
+                                <span>ภูมิภาคที่ประสงค์จะเข้าร่วมสำรวจ (Preferred Expedition Region) <span class="required-star">*</span></span>
                                 <span class="label-sub">(เลือกได้เพียง 1 ภูมิภาค)</span>
                             </label>
                             <div class="radio-grid">
@@ -319,6 +320,15 @@
                                         <span class="card-desc">ศิลปะถ้ำโบราณและดินแดนเอาต์แบ็ก</span>
                                     </div>
                                 </label>
+
+                                <label class="custom-radio-card">
+                                    <input type="radio" name="region" value="Antarctica" id="regionAntarctica">
+                                    <div class="card-content">
+                                        <i data-lucide="compass"></i>
+                                        <span class="card-title">แอนตาร์กติกา (Antarctica)</span>
+                                        <span class="card-desc">สำรวจอารยธรรมโบราณใต้ธารน้ำแข็งขั้วโลก</span>
+                                    </div>
+                                </label>
                             </div>
                             <span class="error-message" id="regionError"></span>
                         </div>
@@ -355,7 +365,7 @@
                     <!-- File Upload: Passport/ID -->
                     <div class="form-group full-width">
                         <label for="passportFile">
-                            อัปโหลดสำเนาหนังสือเดินทาง หรือ บัตรประชาชน (Upload Passport / National ID) <span class="required-star">*</span>
+                            <span>อัปโหลดสำเนาหนังสือเดินทาง หรือ บัตรประชาชน (Upload Passport / National ID) <span class="required-star">*</span></span>
                         </label>
                         
                         <div class="file-upload-zone" id="fileDropZone">
@@ -390,7 +400,7 @@
                     <div class="form-group full-width">
                         <div class="label-with-counter">
                             <label for="comments">
-                                ข้อมูลและข้อคิดเห็นเพิ่มเติม (Additional Comments)
+                                <span>ข้อมูลและข้อคิดเห็นเพิ่มเติม (Additional Comments)</span>
                             </label>
                             <span class="char-counter" id="charCounter">0 / 1000 ตัวอักษร</span>
                         </div>
