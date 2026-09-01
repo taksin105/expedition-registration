@@ -170,7 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
         previewFileSize.textContent = formatBytes(file.size);
 
         uploadPlaceholder.classList.add('hidden');
+        uploadPlaceholder.style.display = 'none';
         filePreviewCard.classList.remove('hidden');
+        filePreviewCard.style.display = 'flex';
         clearError('passportFile');
     }
 
@@ -179,7 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSelectedFile = null;
         passportFileInput.value = '';
         uploadPlaceholder.classList.remove('hidden');
+        uploadPlaceholder.style.display = '';
         filePreviewCard.classList.add('hidden');
+        filePreviewCard.style.display = 'none';
     });
 
     function formatBytes(bytes, decimals = 2) {
@@ -495,7 +499,9 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSelectedFile = null;
         passportFileInput.value = '';
         uploadPlaceholder.classList.remove('hidden');
+        uploadPlaceholder.style.display = '';
         filePreviewCard.classList.add('hidden');
+        filePreviewCard.style.display = 'none';
         
         salaryRange.value = 700;
         salaryDisplay.textContent = '$700';
