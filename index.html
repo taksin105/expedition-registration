@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบลงทะเบียนทีมสำรวจโบราณคดี | นายทักษิณ นิสภวาณิชย์ (66040233105)</title>
+    
+    <!-- Google Fonts: Prompt & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <!-- ======================================================== -->
+        <!-- ส่วนหัว: ข้อมูลนักศึกษาผู้พัฒนา (Programmer Profile Card) -->
+        <!-- ======================================================== -->
+        <header class="programmer-hero-card">
+            <div class="hero-top-bar">
+                <span class="activity-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    กิจกรรม: พัฒนาหน้าเว็บไซต์_ในฐานะ Programmer เพื่อลงทะเบียน
+                </span>
+                <span class="status-pill">
+                    <span class="status-dot"></span> Form Validation & Bug Hunt
+                </span>
+            </div>
+
+            <div class="programmer-info-content">
+                <div class="programmer-avatar">
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                <div class="programmer-text">
+                    <h2 class="programmer-name">นายทักษิณ นิสภวาณิชย์</h2>
+                    <div class="programmer-meta">
+                        <span class="meta-tag id-tag">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            รหัสนักศึกษา: <strong>66040233105</strong>
+                        </span>
+                        <span class="meta-tag major-tag">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                            สาขาเทคโนโลยีสารสนเทศ (IT)
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-bottom-bar">
+                <span>อ้างอิงและต่อยอดจาก: <a href="https://www.realbugz.com/en/task-form" target="_blank" rel="noopener">Realbugz Task Form</a></span>
+                <span class="hint-qa">🎯 มี Bug ซ่อนอยู่ 2 จุด สำหรับให้เพื่อน Tester ตรวจหา</span>
+            </div>
+        </header>
+
+        <!-- ======================================================== -->
+        <!-- ส่วนหัวฟอร์มลงทะเบียน (Registration Header) -->
+        <!-- ======================================================== -->
+        <div class="form-title-section">
+            <span class="sub-badge">ARCHAEOLOGICAL EXPEDITION 2026</span>
+            <h1 class="main-title">แบบฟอร์มลงทะเบียนเข้าร่วมทีมสำรวจเอลดอเรีย</h1>
+            <p class="main-desc">โปรดกรอกข้อมูลให้ครบถ้วนทุกช่องที่มีเครื่องหมาย <span class="req">*</span> เพื่อให้ระบบตรวจสอบข้อมูล (Form Validation) ก่อนส่งใบสมัคร</p>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- ตัวแบบฟอร์มหลัก (Modern Clean Registration Form) -->
+        <!-- ======================================================== -->
+        <main class="form-container-card">
+            <form id="regForm" novalidate autocomplete="off">
+                
+                <!-- 1. ชื่อ-นามสกุล -->
+                <div class="input-block">
+                    <label for="fullName">
+                        1. ชื่อ-นามสกุล (Full Name) <span class="req">*</span>
+                    </label>
+                    <div class="field-wrap">
+                        <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <input type="text" id="fullName" placeholder="เช่น ดร. ปีเตอร์ ฟอร์ด หรือ นายทักษิณ นิสภวาณิชย์">
+                    </div>
+                    <div class="field-hint">ความยาวอย่างน้อย 2 ตัวอักษร</div>
+                    <div class="error-msg" id="fullNameError"></div>
+                </div>
+
+                <!-- 2. อีเมล -->
+                <div class="input-block">
+                    <label for="email">
+                        2. อีเมลติดต่อ (Email Address) <span class="req">*</span>
+                    </label>
+                    <div class="field-wrap">
+                        <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <input type="email" id="email" placeholder="example@domain.com">
+                    </div>
+                    <div class="field-hint">ตัวอย่าง: user@gmail.com หรือ contact@eldoria.org</div>
+                    <div class="error-msg" id="emailError"></div>
+                </div>
+
+                <!-- 3. เบอร์โทรศัพท์ (มี BUG 1: ยอมให้พิมพ์ตัวอักษรได้) -->
+                <div class="input-block">
+                    <label for="phone">
+                        3. เบอร์โทรศัพท์ (Contact Number) <span class="req">*</span>
+                    </label>
+                    <div class="field-wrap">
+                        <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <input type="text" id="phone" placeholder="เช่น 0812345678">
+                    </div>
+                    <div class="field-hint">ความยาว 7 - 15 ตัวอักษร</div>
+                    <div class="error-msg" id="phoneError"></div>
+                </div>
+
+                <!-- 4. วันเกิด -->
+                <div class="input-block">
+                    <label for="dob">
+                        4. วัน/เดือน/ปีเกิด (Date of Birth) <span class="req">*</span>
+                    </label>
+                    <div class="field-wrap">
+                        <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <input type="date" id="dob">
+                    </div>
+                    <div class="error-msg" id="dobError"></div>
+                </div>
+
+                <!-- 5. ประสบการณ์โบราณคดี -->
+                <div class="input-block">
+                    <label for="experience">
+                        5. ประสบการณ์งานโบราณคดี (Archaeology Experience) <span class="req">*</span>
+                    </label>
+                    <div class="field-wrap select-wrap">
+                        <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        <select id="experience">
+                            <option value="none" selected>ไม่มีประสบการณ์ (No experience)</option>
+                            <option value="amateur">ระดับเริ่มต้น (Amateur: ไม่เกิน 1 ปี)</option>
+                            <option value="intermediate">ระดับปานกลาง (Intermediate: 1 - 5 ปี)</option>
+                            <option value="professional">ระดับมืออาชีพ (Professional: มากกว่า 5 ปี)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 6. ตำแหน่งที่ต้องการในทีม (Checkboxes) -->
+                <div class="input-block">
+                    <label>
+                        6. บทบาทหน้าที่ที่ต้องการในทีม (Preferred Role) <span class="req">*</span> 
+                        <span class="label-badge">เลือกได้หลายข้อ</span>
+                    </label>
+                    <div class="selection-grid">
+                        <label class="choice-card">
+                            <input type="checkbox" name="role" value="Researcher">
+                            <div class="choice-box">
+                                <span class="custom-chk"></span>
+                                <span class="choice-text">นักวิจัยโบราณคดี (Researcher)</span>
+                            </div>
+                        </label>
+                        <label class="choice-card">
+                            <input type="checkbox" name="role" value="Photographer">
+                            <div class="choice-box">
+                                <span class="custom-chk"></span>
+                                <span class="choice-text">ช่างภาพบันทึกข้อมูล (Photographer)</span>
+                            </div>
+                        </label>
+                        <label class="choice-card">
+                            <input type="checkbox" name="role" value="Drone Operator">
+                            <div class="choice-box">
+                                <span class="custom-chk"></span>
+                                <span class="choice-text">ผู้ควบคุมโดรนสำรวจ (Drone Operator)</span>
+                            </div>
+                        </label>
+                        <label class="choice-card">
+                            <input type="checkbox" name="role" value="Medic">
+                            <div class="choice-box">
+                                <span class="custom-chk"></span>
+                                <span class="choice-text">แพทย์สนาม/พยาบาล (Medic)</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="error-msg" id="roleError"></div>
+                </div>
+
+                <!-- 7. ภูมิภาคที่ต้องการสำรวจ (Radio Buttons) -->
+                <div class="input-block">
+                    <label>
+                        7. ภูมิภาคที่ประสงค์จะเข้าร่วมสำรวจ (Preferred Region) <span class="req">*</span>
+                        <span class="label-badge">เลือกได้ 1 แห่ง</span>
+                    </label>
+                    <div class="selection-grid">
+                        <label class="choice-card">
+                            <input type="radio" name="region" value="South America">
+                            <div class="choice-box">
+                                <span class="custom-radio"></span>
+                                <span class="choice-text">อเมริกาใต้ (South America)</span>
+                            </div>
+                        </label>
+                        <label class="choice-card">
+                            <input type="radio" name="region" value="Africa">
+                            <div class="choice-box">
+                                <span class="custom-radio"></span>
+                                <span class="choice-text">แอฟริกา (Africa)</span>
+                            </div>
+                        </label>
+                        <label class="choice-card">
+                            <input type="radio" name="region" value="Asia">
+                            <div class="choice-box">
+                                <span class="custom-radio"></span>
+                                <span class="choice-text">เอเชีย (Asia)</span>
+                            </div>
+                        </label>
+                        <label class="choice-card">
+                            <input type="radio" name="region" value="Europe">
+                            <div class="choice-box">
+                                <span class="custom-radio"></span>
+                                <span class="choice-text">ยุโรป (Europe)</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="error-msg" id="regionError"></div>
+                </div>
+
+                <!-- 8. สไลเดอร์ค่าตอบแทน -->
+                <div class="input-block slider-block">
+                    <div class="slider-header">
+                        <label for="salary">
+                            8. ค่าตอบแทนรายสัปดาห์ที่คาดหวัง:
+                        </label>
+                        <span class="salary-highlight">
+                            <span id="salaryVal">$700</span> / สัปดาห์
+                        </span>
+                    </div>
+                    <input type="range" id="salary" min="0" max="1700" step="10" value="700" class="modern-slider">
+                    <div class="slider-limits">
+                        <span>ขั้นต่ำ: $0</span>
+                        <span>ค่าเริ่มต้น: $700</span>
+                        <span>สูงสุด: $1,700</span>
+                    </div>
+                </div>
+
+                <!-- 9. อัปโหลดไฟล์เอกสาร -->
+                <div class="input-block">
+                    <label for="idFile">
+                        9. อัปโหลดสำเนาบัตรประชาชน หรือ พาสปอร์ต (Upload Passport/ID) <span class="req">*</span>
+                    </label>
+                    <div class="file-card-box">
+                        <input type="file" id="idFile" accept=".jpg, .jpeg, .png, .pdf">
+                        <div class="file-info-text">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                            <span>รองรับไฟล์นามสกุล <strong>JPG, PNG, PDF</strong> (ขนาดไม่เกิน 5 MB)</span>
+                        </div>
+                    </div>
+                    <div class="error-msg" id="idFileError"></div>
+                </div>
+
+                <!-- 10. ยอมรับเงื่อนไข (มี BUG 2: ไม่ติ๊กถูกก็ส่งได้) -->
+                <div class="input-block terms-wrapper">
+                    <label class="terms-card">
+                        <input type="checkbox" id="terms">
+                        <span class="custom-chk terms-chk"></span>
+                        <span class="terms-text">
+                            ฉันได้อ่านและยอมรับ <strong>ข้อตกลงและเงื่อนไขการเข้าร่วมโครงการ</strong> <span class="req">*</span>
+                        </span>
+                    </label>
+                    <div class="error-msg" id="termsError"></div>
+                </div>
+
+                <!-- ปุ่มการดำเนินการ (Submit / Clear) -->
+                <div class="action-buttons-row">
+                    <button type="submit" class="btn btn-submit" id="btnSubmit">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        ยืนยันการลงทะเบียน (Submit)
+                    </button>
+                    <button type="button" class="btn btn-clear" id="btnClear">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M3 21v-5h5"></path></svg>
+                        ล้างข้อมูล (Clear)
+                    </button>
+                </div>
+
+            </form>
+        </main>
+
+        <!-- ======================================================== -->
+        <!-- ส่วนกล่องเฉลย Bug สำหรับ Tester และอาจารย์ -->
+        <!-- ======================================================== -->
+        <section class="qa-solution-box">
+            <details>
+                <summary>
+                    <div class="summary-left">
+                        <span class="qa-icon">🐛</span>
+                        <strong>เฉลยตำแหน่ง Bug ทั้ง 2 จุด (สำหรับ Tester & อาจารย์)</strong>
+                    </div>
+                    <span class="toggle-hint">คลิกเพื่อดูรายละเอียด ▾</span>
+                </summary>
+                <div class="qa-content-body">
+                    <p class="qa-instruction">
+                        โปรแกรมเมอร์ได้จงใจสร้างจุดบกพร่อง (Bug) ไว้ 2 ตำแหน่งตามโจทย์ เพื่อให้เพื่อนร่วมชั้นฝึกปฏิบัติการค้นหาข้อผิดพลาด:
+                    </p>
+
+                    <div class="bug-item-card">
+                        <div class="bug-badge red">Bug #1</div>
+                        <h4>ช่องเบอร์โทรศัพท์ (Contact Number) ยอมรับตัวอักษร</h4>
+                        <div class="bug-detail">
+                            <p><strong>ข้อกำหนด (Requirement):</strong> เบอร์โทรศัพท์ต้องเป็นตัวเลขความยาว 7-15 หลักเท่านั้น</p>
+                            <p><strong>จุดที่ผิดในโค้ด (Root Cause):</strong> ใน <code>script.js</code> โปรแกรมเมอร์ตรวจเช็คเพียงแค่ความยาว <code>phone.length &gt;= 7</code> แต่<strong>ไม่ได้ตรวจสอบว่ามีตัวอักษรปนอยู่หรือไม่</strong></p>
+                            <p><strong>วิธีทดสอบ (Reproduction Step):</strong> พิมพ์ตัวหนังสือ เช่น <code>abcdefg</code> หรือ <code>เบอร์โทรผม</code> ลงในช่องเบอร์โทรศัพท์ แล้วกด Submit จะพบว่า<strong>ระบบยอมให้ผ่านโดยไม่แจ้ง Error</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="bug-item-card">
+                        <div class="bug-badge blue">Bug #2</div>
+                        <h4>ส่งฟอร์มสำเร็จได้โดยไม่ต้องติ๊กยอมรับเงื่อนไข</h4>
+                        <div class="bug-detail">
+                            <p><strong>ข้อกำหนด (Requirement):</strong> ผู้สมัครจำเป็นต้องติ๊กเครื่องหมายถูกที่ช่องยอมรับเงื่อนไขก่อนส่งใบสมัครเสมอ</p>
+                            <p><strong>จุดที่ผิดในโค้ด (Root Cause):</strong> ในฟังก์ชันตรวจสอบของ <code>script.js</code> โปรแกรมเมอร์<strong>ลืมเขียนคำสั่งตรวจสอบ <code>if (!terms.checked)</code></strong> ทำให้ตัวแปร <code>isValid</code> ยังเป็นจริงเสมอ</p>
+                            <p><strong>วิธีทดสอบ (Reproduction Step):</strong> กรอกข้อมูลทุกช่องให้ครบ แต่<strong>ไม่ต้องติ๊กถูก</strong>ที่ช่องยอมรับเงื่อนไข แล้วกดปุ่ม Submit จะพบว่า<strong>ระบบบันทึกและส่งฟอร์มสำเร็จทันที</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <p>กิจกรรม "พัฒนาหน้าเว็บไซต์_ในฐานะ Programmer เพื่อลงทะเบียน" &copy; 2026</p>
+            <p>พัฒนาโดย <strong>นายทักษิณ นิสภวาณิชย์</strong> (รหัส <strong>66040233105</strong>) สาขาเทคโนโลยีสารสนเทศ</p>
+        </footer>
+
+        <!-- Modal แสดงความสำเร็จเมื่อส่งฟอร์ม -->
+        <div id="successModal" class="modal-backdrop hidden">
+            <div class="modal-box">
+                <div class="modal-success-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <h2>ลงทะเบียนสำเร็จเรียบร้อย!</h2>
+                <p class="modal-sub">ระบบได้ทำการบันทึกข้อมูลใบสมัครเข้าร่วมทีมสำรวจเอลดอเรียแล้ว</p>
+                <div id="resultSummary" class="modal-summary-panel"></div>
+                <button type="button" class="btn btn-modal-close" id="btnCloseModal">ตกลงและปิดหน้าต่าง</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
